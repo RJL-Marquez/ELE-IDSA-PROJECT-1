@@ -1,0 +1,15 @@
+item,value
+Raw dataset (all routes),9197694
+Route 801 only,547616
+Bus serving its assigned route,524728
+No error flags,480452
+Valid stop ID (both directions),455654
+Southbound (direction 6),229421
+After removing duplicate stop records,229414
+Records in analysis window (weekdays 7:00-17:59),126070
+Values imputed: ons,14
+Values imputed: offs,19
+Values imputed: max_load,0
+Values imputed: dwell_time,381
+Terminal-stop records excluded from dwell analysis,17659
+"Records with no valid headway (terminal stop, or previous bus not scheduled 10 min earlier)",175789
