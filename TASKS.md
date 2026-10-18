@@ -13,6 +13,7 @@ The data is already cleaned. Everyone starts from `data/processed/route801_event
 1. Get access to the repo. Rence adds you as a collaborator; accept the invite.
 2. Open Claude Code on the repo. On claude.ai/code, start a session with `RJL-Marquez/ELE-IDSA-PROJECT-1`; on your laptop, use `git clone https://github.com/RJL-Marquez/ELE-IDSA-PROJECT-1` and run `claude` inside it.
 3. Paste your prompt below.
+   - **No repo access?** Download your pack from `handoff/` (`elijah_task_pack.zip` or `khalil_task_pack.zip`), unzip it and follow its `START_HERE.md`. It works in a normal claude.ai chat.
 4. When it's done, look at your charts in `figures/` yourself. If a label is unclear or text overlaps, ask Claude to fix it.
 
 ---
@@ -52,7 +53,7 @@ Read CLAUDE.md, then do my tasks for this repo:
    H3 (fig08_h3_headway_cv_by_stop): rows with headway_s not null. For each service_day and stop_order with at least 3 headways, compute CV = std/mean of headway_s; then average CV over days for each stop_order. Line chart with markers of mean CV vs stop_order (stops 2-28), with a shaded band for the 25th-75th percentile across days. Spearman correlation stop_order vs mean CV. Y "Headway irregularity (CV)", X "Stop order along the route". Expect CV rising from about 0.4 to about 0.6, rho about 0.9.
    Use alpha = 0.05. Print every statistic used in the text.
 2. Write report/sections/05_results_hypotheses.md: one subsection per hypothesis with the figure filename, 3-4 bullets (what the chart shows with numbers, the test result with statistic and p-value, reject or fail to reject H0). Then a short "Discussion" with bullets: how H2 -> H1 -> H3 form one cycle (more passengers -> longer stops -> bus falls behind -> bigger gap -> even more passengers -> bunching grows along the route), and limitations (association, not proof of cause; one route and direction; APC counting errors; some trips not recorded).
-3. Write report/sections/06_conclusion.md: 5-7 bullet points that summarize the WHOLE report (data used, cleaning, the three findings with key numbers, the overall conclusion, one recommendation such as holding control or faster boarding). No paragraphs.
+3. Write report/sections/06_conclusion.md: 5-7 bullet points that summarize the WHOLE report (data used, cleaning, where and when demand is highest from report/sections/03b_results_heatmap.md, the three findings with key numbers, the overall conclusion, one recommendation such as holding control or faster boarding). If report/sections/03_results_ridership_patterns.md is still empty, add one bullet "[Ridership patterns: to be added from Elijah's section]". No paragraphs.
 4. Commit only my files (notebook with outputs, 3 PNGs, 2 markdown files) and push to main (git pull --rebase origin main first).
 ```
 
