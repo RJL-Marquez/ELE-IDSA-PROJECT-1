@@ -1,9 +1,9 @@
 # Results: hypothesis tests
 
-*Owner: Khalil · Notebook: `notebooks/03_hypotheses.ipynb` · Significance level: alpha = 0.05*
+*Owner: Khalil · Notebook: `notebooks/03_hypotheses.ipynb`*
 
 All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every 10 minutes):
-126,070 stop events over 131 service days.
+126,070 stop events over 131 service days. Every test uses a significance level of **alpha = 0.05**.
 
 ## H1 — Buses with a longer headway carry more passengers
 
@@ -22,7 +22,7 @@ All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every
 
 ![Dwell time vs boardings](../../figures/fig07_h2_dwell_vs_boardings.png)
 
-- OLS on 116,697 non-terminal stop events: `dwell_time = 12.79 + 6.91 × ons + 3.65 × offs` (seconds). Each extra **boarding adds about 6.9 s** (95% CI 6.81–7.02) and each **alighting about 3.7 s** (95% CI 3.54–3.76) — boarding costs almost twice as much time as alighting, because passengers pay on entry.
+- OLS on 116,697 non-terminal stop events: `dwell_time = 12.79 + 6.91 × ons + 3.65 × offs` (seconds). Each extra **boarding adds about 6.9 s** (95% CI 6.81–7.02) and each **alighting about 3.7 s** (95% CI 3.54–3.76) — boarding costs about **1.9× as much time** as alighting, which fits the fact that boarding passengers queue at the front door to pay while alighting passengers simply step off.
 - Both coefficients are significant (p < 0.001 each; F(2, 116694) = 12,777, p < 0.001), so we **reject H0**. **R² = 0.180**: boardings and alightings explain 18% of the variation in dwell time, the rest comes from traffic, wheelchair ramps and driver behaviour.
 - Observed mean dwell rises from **16.9 s with no boardings to 111.8 s at 20 boardings**, and the 25th–75th band widens with it, so busy stops are both slower and less predictable.
 - The straight fit runs above the observed means past ~15 boardings (fitted 157 s vs observed 112 s at 20), i.e. the real relationship flattens a little when many passengers board at once.
