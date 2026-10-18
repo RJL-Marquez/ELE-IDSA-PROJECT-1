@@ -15,9 +15,10 @@ PROCESSED = ROOT / "data" / "processed"
 FIGURES = ROOT / "figures"
 
 # ---------------------------------------------------------------- data
-def load_events():
-    """One row per bus per stop (cleaned and imputed). See README for the column list."""
-    return pd.read_csv(PROCESSED / "route801_events.csv.gz", parse_dates=["service_day", "arrival"])
+def load_events(path=None):
+    """One row per bus per stop (cleaned and imputed). See CLAUDE.md for the column list.
+    Pass `path` if the CSV is not in data/processed/ (e.g. uploaded to a chat)."""
+    return pd.read_csv(path or PROCESSED / "route801_events.csv.gz", parse_dates=["service_day", "arrival"])
 
 
 def load_stops():
@@ -92,10 +93,11 @@ def finish(ax, title, xlabel, ylabel, note=None):
                     color=COLORS["muted"], ha="left", va="top")
 
 
-def save(fig, name):
-    """Save to figures/<name>.png (200 dpi)."""
-    FIGURES.mkdir(exist_ok=True)
-    path = FIGURES / f"{name}.png"
+def save(fig, name, folder=None):
+    """Save to figures/<name>.png (200 dpi), or to `folder` if given."""
+    out = Path(folder) if folder else FIGURES
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / f"{name}.png"
     fig.savefig(path, bbox_inches="tight", facecolor="white")
     return path
 
