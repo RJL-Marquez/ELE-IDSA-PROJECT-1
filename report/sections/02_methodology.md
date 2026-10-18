@@ -46,13 +46,15 @@
 
 - **Type conversion:** text is converted to numbers and dates.
 - **Duplicates:** 7 duplicate records (same trip, same stop) are removed.
-- **Terminal stops:** stops 1 and 29 are the ends of the route, where buses wait between trips. Their "dwell times" are layovers (median 10–13 minutes), so the 17,659 terminal records are excluded from the dwell and headway analysis (Figure 1).
+- **Terminal stops:** stops 1 and 29 are the ends of the route, where buses wait between trips. Their "dwell times" are layovers (median 10–13 minutes), so the 17,659 terminal records are excluded from the dwell and headway analysis (see the figure below).
 - **Invalid values:**
   - Boardings or alightings above 40 at a single stop (33 values, above the 99.99th percentile) are counter errors.
   - Dwell times above 10 minutes at non-terminal stops (381 values) are not passenger service.
   - Both are marked as missing.
 - **Imputation:** the missing values are filled with the **median of the same stop and hour**. The median is used because these variables are strongly skewed. In total 414 values were imputed, less than 0.2% of records.
 - **Headway check:** some scheduled trips are missing from the APC data, so two recorded buses can be 20 minutes apart only because the bus between them wasn't recorded. A headway is therefore kept only when the two buses were **scheduled exactly 10 minutes apart**. This leaves 51,437 valid headways in the analysis window.
+
+![Dwell time before and after cleaning](../../figures/fig01_dwell_cleaning.png)
 
 ## Tools
 
