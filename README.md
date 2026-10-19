@@ -1,7 +1,7 @@
 # Why Buses Bunch: Passenger Demand and Bus Bunching on CapMetro Rapid Route 801
 
-ELE IDSA Project 1 · GEC2B · Instructor: Ezron John D. Cabrera
-Group: Rence Marquez, Khalil Badal, Elijah [surname]
+ELE IDSA Project 1 · GEC2B · Group 10 · Instructor: Ezron John D. Cabrera
+Group 10: Khalil Badal, Elijah David Lopez, Rence Joseph Marquez
 
 ## Question
 

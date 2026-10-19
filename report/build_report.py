@@ -25,9 +25,9 @@ OUT = ROOT / "report" / "output"
 
 TITLE = "Why Buses Bunch"
 SUBTITLE = "The Relationship Between Passenger Demand and Bus Bunching on CapMetro Rapid Route 801, July–December 2021"
-COURSE = "ELE IDSA Project 1 · GEC2B"
+COURSE = "ELE IDSA Project 1 · GEC2B · Group 10"
 INSTRUCTOR = "Instructor: Ezron John D. Cabrera"
-MEMBERS = ["Rence Marquez", "Khalil Badal", "Elijah"]
+MEMBERS = ["Badal, Khalil", "Lopez, Elijah David", "Marquez, Rence Joseph"]
 
 # (heading level, heading text, section file or None)
 OUTLINE = [
