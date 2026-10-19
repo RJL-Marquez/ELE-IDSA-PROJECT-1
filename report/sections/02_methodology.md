@@ -7,7 +7,7 @@
 - **Source:** Capital Metropolitan Transportation Authority (CapMetro), *APC Raw July 2021 – December 2021*, Texas Open Data Portal (dataset `im6q-3pc9`), free public download.
 - **How the data is produced:** automatic passenger counters (APC) on CapMetro buses. Door sensors count passengers getting on and off, and the bus's GPS and clock record when and where each stop happens. Each row is one **stop event**: one bus stopping at one stop.
 - **Raw size:** 9,197,694 rows × 47 columns, covering every CapMetro route. All values are stored as text.
-- **Study subset:** Route 801 (CapMetro Rapid), southbound, **July 1 – December 30, 2021**: 229,421 stop events, 29 stops, 143 buses, 184 service days.
+- **Study subset:** Route 801 (CapMetro Rapid), southbound, **July 1 – December 30, 2021**: 229,421 stop events, 29 stops, 143 buses, 183 service days.
 
 ## Parameters used to segregate the data
 

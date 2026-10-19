@@ -3,8 +3,8 @@
 | Person | Notebook | Figures | Report sections |
 |---|---|---|---|
 | **Rence** | `notebooks/01_data_preparation.ipynb` ✅ | `fig01_dwell_cleaning` ✅, `fig02_boardings_heatmap` ✅ | `02_methodology.md` ✅, `03b_results_heatmap.md` ✅, final assembly |
-| **Elijah** | `notebooks/02_ridership_patterns.ipynb` | `fig03_boardings_by_hour`, `fig04_daily_boardings`, `fig05_headway_distribution` | `01_introduction.md`, `03_results_ridership_patterns.md` |
-| **Khalil** | `notebooks/03_hypotheses.ipynb` | `fig06_h1_load_vs_headway`, `fig07_h2_dwell_vs_boardings`, `fig08_h3_headway_cv_by_stop` | `05_results_hypotheses.md`, `06_conclusion.md` |
+| **Elijah** | `notebooks/02_ridership_patterns.ipynb` ✅ | `fig03_boardings_by_hour` ✅, `fig04_daily_boardings` ✅, `fig05_headway_distribution` ✅ | `01_introduction.md` ✅, `03_results_ridership_patterns.md` ✅ |
+| **Khalil** | `notebooks/03_hypotheses.ipynb` ✅ | `fig06_h1_load_vs_headway` ✅, `fig07_h2_dwell_vs_boardings` ✅, `fig08_h3_headway_cv_by_stop` ✅ | `05_results_hypotheses.md` ✅, `06_conclusion.md` ✅ |
 
 The data is already cleaned. Everyone starts from `data/processed/route801_events.csv.gz` through `src/project.py`.
 

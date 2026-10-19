@@ -5,8 +5,8 @@
 - **Data:** CapMetro APC records, Route 801 Rapid southbound, Jul 1 – Dec 30 2021 — **229,421 stop events**, 29 stops, from 9.2 million raw rows
 - **Window:** weekdays 7:00–17:59, when buses run every 10 min (126,070 events, 131 days)
 - **Cleaning:** six filtering rules, end-stop layovers removed, impossible values imputed (<0.2%), **51,437 verified headways**
-- **Demand is concentrated:** stop 1 ~429 boardings per weekday, stop 5 ~323 (morning), stop 19 ~201 (afternoon)
-- *[Ridership patterns: to be added from Elijah's section]*
+- **Demand is concentrated:** stop 1 ~442 boardings per weekday, stop 5 ~329 (morning), stop 19 ~204 (afternoon)
+- **Commuter pattern:** 2,514 boardings per weekday vs 1,728 per weekend day; peaks at 9:00 and 16:00; 5.7% of arrivals bunched, 10.3% long gaps
 
 ## What we found
 

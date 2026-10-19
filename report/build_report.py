@@ -42,7 +42,7 @@ OUTLINE = [
 CAPTIONS = {
     "fig01_dwell_cleaning": "Dwell time before and after cleaning",
     "fig02_boardings_heatmap": "Average weekday boardings by stop and hour",
-    "fig03_boardings_by_hour": "Average boardings per day by hour, weekdays vs weekends",
+    "fig03_boardings_by_hour": "Boardings by hour of day, weekdays vs weekends",
     "fig04_daily_boardings": "Total boardings per day, July–December 2021",
     "fig05_headway_distribution": "Distribution of headways, weekdays 7:00–17:59",
     "fig06_h1_load_vs_headway": "H1: Passengers on board by headway group",
@@ -416,7 +416,9 @@ def build_pptx(content, numbers):
             b = blocks[i]
             kind = b[0]
             if kind == "h":
-                if pending_text:
+                carry = (len(pending_text) == 1 and words(pending_text) <= 30
+                         and i + 1 < len(blocks) and blocks[i + 1][0] == "fig")   # short line rides onto the next figure slide
+                if pending_text and not carry:
                     flush_text(pending_text, sub or title); pending_text = []
                 sub = plain(b[2])
             elif kind in ("p", "pending"):
@@ -455,12 +457,18 @@ def build_pptx(content, numbers):
                 while j < len(blocks) and blocks[j][0] in ("p", "ul"):
                     side += [(0, blocks[j][1])] if blocks[j][0] == "p" else blocks[j][1]
                     j += 1
+                intro = None
+                if len(pending_text) == 1 and words(pending_text) <= 30:   # one short line: put it on the figure slide
+                    intro = pending_text[0][1]; pending_text = []
                 if pending_text:
                     flush_text(pending_text, sub or title); pending_text = []
                 s = new_slide(caption(name, numbers).split(". ", 1)[1], kicker)
                 img = FIGURES / f"{name}.png"
                 fig_w = 8.2 if side else W - 2 * M
                 box_w, box_h, top = fig_w, H - 2.55, 1.6
+                if intro:
+                    put_runs(text_box(s, M, 1.4, W - 2 * M, 0.4).paragraphs[0], intro, 14, MUTED)
+                    box_h, top = box_h - 0.35, 1.95
                 if img.exists():
                     w, h = Image.open(img).size
                     scale = min(box_w / w, box_h / h)
