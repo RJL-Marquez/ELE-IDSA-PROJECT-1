@@ -4,6 +4,10 @@
 
 ## Boardings by hour of day
 
+Before looking at bunching itself, it helps to know when the route is actually busy. Figure 2 plots
+the average boardings per day for each hour, with weekdays and weekends drawn separately, because
+the two behave quite differently.
+
 `fig03_boardings_by_hour.png`
 
 - Weekday demand peaks at **9:00** with **195.9 average boardings**, then stays high through the afternoon with a second peak at **16:00 (175.9)**, matching the morning and afternoon commute.
@@ -15,6 +19,9 @@
 
 ## Boardings per service day
 
+The daily totals show whether demand held steady across the six months, or whether the hypothesis
+tests are dominated by one unusual stretch of the period.
+
 `fig04_daily_boardings.png`
 
 - Average boardings per service day over the study period: **2,291** (weekdays **2,514**, weekends **1,728**).
@@ -25,6 +32,10 @@
 ---
 
 ## Headway distribution (analysis window)
+
+The last of the descriptive results asks how closely the route keeps to its 10-minute schedule in
+the first place. The gap between the scheduled headway and the observed spread is what the three
+hypotheses go on to explain.
 
 `fig05_headway_distribution.png`
 

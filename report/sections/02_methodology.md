@@ -4,12 +4,19 @@
 
 ## Data acquisition
 
+The dataset was downloaded whole and then narrowed to a single route and direction, so that every
+record compared in this report is produced under the same operating conditions.
+
 - **Source:** Capital Metropolitan Transportation Authority (CapMetro), *APC Raw July 2021 – December 2021*, Texas Open Data Portal (dataset `im6q-3pc9`), free public download.
 - **How the data is produced:** automatic passenger counters (APC) on CapMetro buses. Door sensors count passengers getting on and off, and the bus's GPS and clock record when and where each stop happens. Each row is one **stop event**: one bus stopping at one stop.
 - **Raw size:** 9,197,694 rows × 47 columns, covering every CapMetro route. All values are stored as text.
-- **Study subset:** Route 801 (CapMetro Rapid), southbound, **July 1 – December 30, 2021**: 229,421 stop events, 29 stops, 143 buses, 183 service days.
+- **Study subset:** Route 801 (CapMetro Rapid), southbound, **July 1 – December 30, 2021**: 229,421 stop events (229,414 once duplicates are removed), 29 stops, 143 buses, 183 service days.
 
 ## Parameters used to segregate the data
+
+The records were grouped along the parameters below. The analysis window is the most important of
+them: outside 7:00–17:59 the planned headway is no longer 10 minutes, so an uneven gap would say
+nothing about bunching.
 
 | Parameter | Values used | Purpose |
 |---|---|---|
@@ -30,6 +37,10 @@
 - **Dwell time:** seconds from door open to door close.
 
 ## Data cleaning
+
+Raw APC data contains records from other routes, buses running off their assigned route, sensor
+errors and trips the system failed to log. Cleaning removes each of these in turn, so that the
+patterns reported later are properties of the service rather than of the measuring equipment.
 
 **Filtering.** A record is kept only if it passes all six rules:
 
