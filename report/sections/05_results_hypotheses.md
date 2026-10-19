@@ -7,6 +7,11 @@ All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every
 
 ## H1 — Buses with a longer headway carry more passengers
 
+Passengers arrive at a stop more or less steadily, so a bus that pulls in long after the one ahead
+has had more time to accumulate people waiting for it. The null hypothesis is that passenger load
+does not change with the headway behind the bus ahead. Figure 3 compares the load carried in five
+headway bands, and two tests check the same relationship in different ways.
+
 *Figure: `figures/fig06_h1_load_vs_headway.png`*
 
 ![Passenger load by headway group](../../figures/fig06_h1_load_vs_headway.png)
@@ -17,6 +22,11 @@ All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every
 - **Kruskal-Wallis:** H = **5,883.4**, df = 4, p < 0.001. Both tests are below alpha = 0.05, so we **reject H0**: load does depend on the headway.
 
 ## H2 — More boardings and alightings mean longer dwell time
+
+Every passenger who boards or alights has to be served while the doors are open, so dwell time
+should grow with both counts. The null hypothesis is that dwell time does not depend on the number
+of passengers. A linear regression of dwell time on boardings and alightings measures the cost of
+each, and Figure 4 plots the fitted line against what was actually observed.
 
 *Figure: `figures/fig07_h2_dwell_vs_boardings.png`*
 
@@ -29,6 +39,11 @@ All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every
 
 ## H3 — Headways become more irregular along the route
 
+Buses leave the first stop on a regular schedule, but any delay picked up on the way is carried
+forward to every stop after it. If that is what happens, the spacing between buses should become
+less even the further along the route they travel. The null hypothesis is that irregularity does
+not change with position on the route. Figure 5 follows it stop by stop.
+
 *Figure: `figures/fig08_h3_headway_cv_by_stop.png`*
 
 ![Headway CV by stop order](../../figures/fig08_h3_headway_cv_by_stop.png)
@@ -39,6 +54,9 @@ All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every
 - p < alpha = 0.05, so we **reject H0**: buses do not keep their 10-minute spacing along the route, they drift apart and bunch up.
 
 ## Discussion
+
+The three hypotheses were tested separately, but the results are not three independent findings.
+Read together they describe one mechanism, in which each effect feeds the next.
 
 **The three results form one self-reinforcing cycle**
 
