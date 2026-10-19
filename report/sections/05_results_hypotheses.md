@@ -45,7 +45,7 @@ All tests use the analysis window (weekdays 07:00–17:59, buses scheduled every
 - **H2 → H1:** a bus that meets more passengers stays longer at each stop (+6.9 s per boarding), so it falls further behind schedule.
 - **H1 → H2:** falling behind opens a bigger gap to the bus ahead, and a bigger gap means more passengers waiting — load rises from 9.1 to 17.9 as the headway grows past 20 minutes — which lengthens the dwell again.
 - **→ H3:** each turn of the loop amplifies the previous one, so the spacing between buses gets more uneven the further along the route they go (CV 0.39 → 0.58), while the bus behind, with a short headway, finds empty stops and catches up. That is bus bunching.
-- The cycle is consistent with the demand pattern in `03b_results_heatmap.md`: the delay starts at the few very busy stops early in the route and then grows downstream.
+- The cycle is consistent with the demand pattern shown in the boardings heatmap: the delay starts at the few very busy stops early in the route and then grows downstream.
 
 **Limitations**
 
